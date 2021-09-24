@@ -1,4 +1,4 @@
-name: test
+name: exampleの出力結果画像が最新かどうかのテスト
 
 on:
   push:
