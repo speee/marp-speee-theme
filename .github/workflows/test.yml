@@ -18,9 +18,11 @@ jobs:
       - name: Build slide images
         run: |
           set -eux
-          set dir_name=latest-images
+          dir_name=latest-images
           mkdir $dir_name
-          npx @marp-team/marp-cli@latest example.md --images png --output $dir_name
+          npx @marp-team/marp-cli@latest example.md \
+            --images png \
+            --output $dir_name
         working-directory: example
 
       - name: compare images
