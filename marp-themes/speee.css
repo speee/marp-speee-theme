@@ -1,9 +1,8 @@
-@charset "UTF-8";
 /* @theme speee */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap");
 @import-theme "default";
 section {
-  /* fontは https://speee.kibe.la/@masayuki_nagayama/22064 に合わせた */
-  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
   background: radial-gradient(#f2b9a1, #ea6264);
 }
 
