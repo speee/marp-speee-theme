@@ -30,11 +30,14 @@ jobs:
 
       - name: compare images
         run: |
+          set -eux
           composite -compose difference \
             example/example.002.png \
             "$DIR_NAME"/example.001.png \
             - | \
             identify -format "%[mean]" -
+
+          echo ''
 
           composite -compose difference \
             example/example.001.png \
