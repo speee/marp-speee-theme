@@ -38,12 +38,16 @@ jobs:
             identify -format "%[mean]" -)"
           echo "$result"
 
+          test "$result" -lt 0.001
+
           result="$(composite -compose difference \
             example/example.002.png \
             example-backup/example.002.png \
             - | \
             identify -format "%[mean]" -)"
           echo "$result"
+
+          test "$result" -lt 0.0001
 
       - name: 検証しやすいようにビルド結果をartifactへ保存
         uses: actions/upload-artifact@v2
