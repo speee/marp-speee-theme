@@ -5,5 +5,6 @@ module.exports = async ({ github, context, core }) => {
     commit_sha: context.sha,
     body: "👋 Thanks for reporting!",
   });
+  console.log("bbbbbbbbbbbbbbbbbb");
   console.log(result);
 };
