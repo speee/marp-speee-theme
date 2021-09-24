@@ -36,8 +36,6 @@ jobs:
             example-backup/example.001.png \
             - | \
             identify -format "%[mean]" -)"
-          echo "$result"
-
           (( $(echo "0.001 > $result" |bc -l) ))
 
           result="$(composite -compose difference \
@@ -45,8 +43,6 @@ jobs:
             example-backup/example.002.png \
             - | \
             identify -format "%[mean]" -)"
-          echo "$result"
-
           (( $(echo "0.001 > $result" |bc -l) ))
 
       - name: 検証しやすいようにビルド結果をartifactへ保存
