@@ -6,6 +6,10 @@ DST_PATH      = ./example/example.001.png ./example/example.002.png
 
 all: $(DST_PATH)
 
+init:
+	git config core.hooksPath .githooks
+	npm install -g sass
+
 $(DST_PATH): $(CSS_PATH) $(SRC_PATH)
 	npx @marp-team/marp-cli@latest \
 	  $(SRC_PATH) \
