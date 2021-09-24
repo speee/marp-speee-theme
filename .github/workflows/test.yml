@@ -25,7 +25,9 @@ jobs:
       - name: 再ビルドの結果がコミットした結果と一致しているかチェック
         run: test "$(git status -s | wc -l)" -eq 0
 
-      - uses: actions/upload-artifact@v2
+      - name: 検証しやすいようにビルド結果をartifactへ保存
+        uses: actions/upload-artifact@v2
+        if: ${{ always() }}
         with:
           name: example
           path: example
