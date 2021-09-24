@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# build project
+build_result=$(make)
+build_rc=$?
+if [ $build_rc -ne 0 ] ; then
+    echo "git pre-commit check failed: build failed."
+    exit 1
+fi
