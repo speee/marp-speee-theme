@@ -8,6 +8,10 @@ on:
 
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash --noprofile --norc -euxo pipefail {0}
+
 jobs:
   test:
     runs-on: ubuntu-latest
