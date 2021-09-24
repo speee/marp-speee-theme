@@ -50,5 +50,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: . # or path/to/artifact
+          name: images
+          path: "./$DIR_NAME" # or path/to/artifact
