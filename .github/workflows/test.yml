@@ -16,5 +16,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build slide images
-        run: npx @marp-team/marp-cli@latest example.md --images png
+        run: |
+          set dir_name=latest-images
+          mkdir $dir_name
+          npx @marp-team/marp-cli@latest example.md --images png --output $dir_name
         working-directory: example
