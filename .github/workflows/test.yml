@@ -19,7 +19,7 @@ jobs:
         run: |
           set -eux
           make clean all
-          test $(git status -s | wc -l) -eq 0
+          test "$(git status -s | wc -l)" -eq 0
 
       - uses: actions/upload-artifact@v2
         with:
