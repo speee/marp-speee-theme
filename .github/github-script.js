@@ -1,8 +1,8 @@
-module.exports = async ({ github, context, core }) => {
+module.exports = async ({ context }) => {
   github.rest.repos.createCommitComment({
     owner: context.repo.owner,
     repo: context.repo.repo,
-    commit_sha: context.sha,
+    commit_sha: context.payload.pull_request.head.sha,
     body: "👋 Thanks for reporting!",
   });
 };

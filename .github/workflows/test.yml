@@ -60,8 +60,8 @@ jobs:
 
       - name: 結果画像をコミットへ貼り付け
         uses: actions/github-script@v5
+        if: github.event_name == 'pull_request'
         with:
           script: |
             const script = require('./.github/github-script.js')
-            console.log(await script({github, context, core}))
-            console.log("aaaaaaaaaaaaaaaaaaaaaa")
+            console.log(await script({ context }))
