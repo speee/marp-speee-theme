@@ -18,9 +18,3 @@ jobs:
       - name: Build slide images
         run: npx @marp-team/marp-cli@latest example.md --images png
         working-directory: example
-
-      - uses: actions/github-script@v4
-        with:
-          script: |
-            const script = require('./.github/github-script.js')
-            await script({github, context, core})
