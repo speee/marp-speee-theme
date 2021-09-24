@@ -31,19 +31,20 @@ jobs:
       - name: compare images
         run: |
           set -eux
-          composite -compose difference \
+          result=$(composite -compose difference \
             example/example.002.png \
             "$DIR_NAME"/example.001.png \
             - | \
-            identify -format "%[mean]" -
+            identify -format "%[mean]" -)
 
-          echo ''
+          echo $result
 
-          composite -compose difference \
+          result=$(composite -compose difference \
             example/example.001.png \
             "$DIR_NAME"/example.001.png \
             - | \
-            identify -format "%[mean]" -
+            identify -format "%[mean]" -)
+          echo $result
 
       - uses: actions/upload-artifact@v2
         with:
