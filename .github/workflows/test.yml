@@ -45,10 +45,7 @@ jobs:
             - | \
             identify -format "%[mean]" -
 
-          ls -R
-          tree
-
       - uses: actions/upload-artifact@v2
         with:
           name: images
-          path: "./$DIR_NAME" # or path/to/artifact
+          path: ${{ env.DIR_NAME }} # or path/to/artifact
