@@ -45,5 +45,7 @@ jobs:
             - | \
             identify -format "%[mean]" -
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: "$DIR_NAME/example.001.png" # or path/to/artifact
