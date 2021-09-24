@@ -44,3 +44,8 @@ jobs:
             "$DIR_NAME"/example.001.png \
             - | \
             identify -format "%[mean]" -
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: "$DIR_NAME" # or path/to/artifact
