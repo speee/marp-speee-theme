@@ -1,4 +1,4 @@
-module.exports = async ({ context }) => {
+module.exports = async ({ github, context }) => {
   github.rest.repos.createCommitComment({
     owner: context.repo.owner,
     repo: context.repo.repo,

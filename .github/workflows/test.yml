@@ -64,4 +64,4 @@ jobs:
         with:
           script: |
             const script = require('./.github/github-script.js')
-            console.log(await script({ context }))
+            console.log(await script({ github, context }))
