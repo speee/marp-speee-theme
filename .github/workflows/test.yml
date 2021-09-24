@@ -23,11 +23,27 @@ jobs:
       - name: sassコマンドのインストール
         run: npm install -g sass
 
+      - name: コミットに含まれるスライド画像をバックアップ
+        run: mkdir example-backup && mv example.0* example-backup
+
       - name: 一度すべて削除して再ビルド
         run: make clean all
 
       - name: 再ビルドの結果がコミットした結果と一致しているかチェック
-        run: test "$(git status -s | wc -l)" -eq 0
+        run: |
+          result="$(composite -compose difference \
+            example/example.001.png \
+            example-backup/example.001.png \
+            - | \
+            identify -format "%[mean]" -)"
+          echo "$result"
+
+          result="$(composite -compose difference \
+            example/example.002.png \
+            example-backup/example.002.png \
+            - | \
+            identify -format "%[mean]" -)"
+          echo "$result"
 
       - name: 検証しやすいようにビルド結果をartifactへ保存
         uses: actions/upload-artifact@v2
