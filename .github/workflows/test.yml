@@ -24,7 +24,7 @@ jobs:
           mkdir $dir_name
           npx @marp-team/marp-cli@latest example/example.md \
             --images png \
-            --output $dir_name
+            --output $dir_name/example.png
 
       - name: compare images
         run: |
