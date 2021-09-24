@@ -38,7 +38,7 @@ jobs:
             identify -format "%[mean]" -)"
           echo "$result"
 
-          test "$result" -lt 0.001
+          (( $(echo "0.001 > $result" |bc -l) ))
 
           result="$(composite -compose difference \
             example/example.002.png \
@@ -47,7 +47,7 @@ jobs:
             identify -format "%[mean]" -)"
           echo "$result"
 
-          test "$result" -lt 0.0001
+          (( $(echo "0.001 > $result" |bc -l) ))
 
       - name: 検証しやすいようにビルド結果をartifactへ保存
         uses: actions/upload-artifact@v2
