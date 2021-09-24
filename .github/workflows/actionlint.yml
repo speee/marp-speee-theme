@@ -1,5 +1,15 @@
 name: Lint GitHub Actions workflows
-on: [push, pull_request]
+
+# 参考元: https://sue445.hatenablog.com/entry/2021/01/07/004835#Q-%E3%81%A0%E3%81%A3%E3%81%9F%E3%82%89pull_request%E3%81%AF%E4%B8%8D%E8%A6%81%E3%81%A7%E3%81%AF
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   actionlint:
