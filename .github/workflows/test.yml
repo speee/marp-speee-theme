@@ -52,3 +52,10 @@ jobs:
           name: example
           path: example
           if-no-files-found: error
+
+      - name: 結果画像をコミットへ貼り付け
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const script = require('./.github/github-script.js')
+            await script({github, context, core})
