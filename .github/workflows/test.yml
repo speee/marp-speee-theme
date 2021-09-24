@@ -8,6 +8,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  dir_name: latest-images
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,14 +21,21 @@ jobs:
       - name: Build slide images
         run: |
           set -eux
-          dir_name=latest-images
           mkdir $dir_name
-          npx @marp-team/marp-cli@latest example.md \
+          npx @marp-team/marp-cli@latest example/example.md \
             --images png \
             --output $dir_name
-        working-directory: example
 
       - name: compare images
         run: |
-          echo 1
-        # composite -compose difference example/example.002.png example2/example.001.png - | identify -format "%[mean]" -
+          composite -compose difference \
+            example/example.002.png \
+            $dir_name/example.001.png \
+            - | \
+            identify -format "%[mean]" -
+
+          composite -compose difference \
+            example/example.001.png \
+            $dir_name/example.001.png \
+            - | \
+            identify -format "%[mean]" -
