@@ -1,5 +1,5 @@
+@charset "UTF-8";
 /* @theme speee */
-
 @import-theme "default";
 section {
   /* fontは https://speee.kibe.la/@masayuki_nagayama/22064 に合わせた */
@@ -10,12 +10,12 @@ section {
 section.title {
   color: white;
   background: radial-gradient(#003981, #ea6264);
-
-  H1 {
-    color: white;
-  }
-
-  H2 {
-    color: white;
-  }
 }
+section.title H1 {
+  color: white;
+}
+section.title H2 {
+  color: white;
+}
+
+/*# sourceMappingURL=speee.css.map */
