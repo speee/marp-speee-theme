@@ -9,7 +9,9 @@ on:
   workflow_dispatch:
 
 env:
-  dir_name: latest-images
+  # using uppercases to avoid this problem
+  # https://github.com/rhysd/actionlint/issues/53
+  DIR_NAME: latest-images
 
 jobs:
   test:
@@ -21,21 +23,21 @@ jobs:
       - name: Build slide images
         run: |
           set -eux
-          mkdir $dir_name
+          mkdir $DIR_NAME
           npx @marp-team/marp-cli@latest example/example.md \
             --images png \
-            --output $dir_name/example.png
+            --output $DIR_NAME/example.png
 
       - name: compare images
         run: |
           composite -compose difference \
             example/example.002.png \
-            $dir_name/example.001.png \
+            $DIR_NAME/example.001.png \
             - | \
             identify -format "%[mean]" -
 
           composite -compose difference \
             example/example.001.png \
-            $dir_name/example.001.png \
+            $DIR_NAME/example.001.png \
             - | \
             identify -format "%[mean]" -
