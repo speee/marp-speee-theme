@@ -47,7 +47,7 @@ jobs:
             identify -format "%[mean]" -)"
           echo "$result"
 
-          (( $(echo "0.0001 > $result" |bc -l) ))
+          (( $(echo "0.001 > $result" |bc -l) ))
 
       - name: 検証しやすいようにビルド結果をartifactへ保存
         uses: actions/upload-artifact@v2
