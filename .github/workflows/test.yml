@@ -23,21 +23,21 @@ jobs:
       - name: Build slide images
         run: |
           set -eux
-          mkdir $DIR_NAME
+          mkdir "$DIR_NAME"
           npx @marp-team/marp-cli@latest example/example.md \
             --images png \
-            --output $DIR_NAME/example.png
+            --output "$DIR_NAME"/example.png
 
       - name: compare images
         run: |
           composite -compose difference \
             example/example.002.png \
-            $DIR_NAME/example.001.png \
+            "$DIR_NAME"/example.001.png \
             - | \
             identify -format "%[mean]" -
 
           composite -compose difference \
             example/example.001.png \
-            $DIR_NAME/example.001.png \
+            "$DIR_NAME"/example.001.png \
             - | \
             identify -format "%[mean]" -
