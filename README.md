@@ -2,6 +2,13 @@
 
 Speee 用の marp テーマ
 
+# 仕様例
+
+![](./example/example.001.png)
+![](./example/example.002.png)
+![](./example/example.003.png)
+![](./example/example.004.png)
+
 # 開発方法
 
 ## 依存物
@@ -18,4 +25,4 @@ Speee 用の marp テーマ
 # 関連ドキュメント
 
 - [Speee*VI*レギュレーション.pdf (コーポレートカラー仕様)](https://drive.google.com/file/d/1m5VzUtWX6JbortXmylHLABrN_RxamyXx/view?usp=sharing)
-- [【テンプレ配布】パワポ職人が本気でGスライドのマスタを作ったから見てくれ \| speee Kibela](https://speee.kibe.la/@masayuki_nagayama/22064)
+- [【テンプレ配布】パワポ職人が本気で G スライドのマスタを作ったから見てくれ \| speee Kibela](https://speee.kibe.la/@masayuki_nagayama/22064)
