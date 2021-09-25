@@ -1,26 +1,67 @@
-name: test
+name: exampleの出力結果画像が最新かどうかのテスト
 
+# 参考元: https://sue445.hatenablog.com/entry/2021/01/07/004835#Q-%E3%81%A0%E3%81%A3%E3%81%9F%E3%82%89pull_request%E3%81%AF%E4%B8%8D%E8%A6%81%E3%81%A7%E3%81%AF
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
   workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash --noprofile --norc -euxo pipefail {0}
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v2
 
-      - name: Build slide images
-        run: npx @marp-team/marp-cli@latest example.md --images png
-        working-directory: example
+      - name: sassコマンドのインストール
+        run: npm install -g sass
 
-      - uses: actions/github-script@v4
+      - name: コミットに含まれるスライド画像をバックアップ
+        run: mkdir example-backup && mv example/example.0* example-backup
+
+      - name: 一度すべて削除して再ビルド
+        run: make clean all
+
+      - name: 再ビルドの結果がコミットした結果と一致しているかチェック
+        run: |
+          result="$(composite -compose difference \
+            example/example.001.png \
+            example-backup/example.001.png \
+            - | \
+            identify -format "%[mean]" -)"
+          (( $(echo "0.001 > $result" |bc -l) ))
+
+          result="$(composite -compose difference \
+            example/example.002.png \
+            example-backup/example.002.png \
+            - | \
+            identify -format "%[mean]" -)"
+          (( $(echo "0.001 > $result" |bc -l) ))
+
+      - name: 検証しやすいようにビルド結果をartifactへ保存
+        uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: example
+          path: example
+          if-no-files-found: error
+
+      - name: 結果画像をコミットへ貼り付け
+        uses: actions/github-script@v5
+        if: github.event_name == 'pull_request'
         with:
           script: |
             const script = require('./.github/github-script.js')
-            await script({github, context, core})
+            console.log(await script({ github, context }))
