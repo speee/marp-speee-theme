@@ -8,34 +8,36 @@ footer: "Footer content"
 ---
 
 <!--
-_class: title
+_class: lead
 _paginate: false
 -->
 
-# H1 要素
+# タイトル
 
-## H2 要素
-
-### H3 要素
-
-Start writing!
+サブタイトルなど
 
 ---
 
-# h1 abc
+# h1 要素
 
-## h2 def
+## h2 要素
 
-### h3 ghi
+### h3 要素
 
----
-
-# 3 枚目
+#### h4 要素
 
 通常の文章、
 改行 1 回した直後の文章。
 
 改行 2 回した直後の文章(次のパラグラフ)
+
+---
+
+<!--
+_class: lead
+-->
+
+## セクション切り替えなど
 
 ---
 
