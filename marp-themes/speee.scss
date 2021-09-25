@@ -1,17 +1,21 @@
 /* @theme speee */
 
-@import-theme "uncover";
+@import-theme "gaia";
 
-// 以下を参考に色を変更
-// https://github.com/marp-team/marp-core/tree/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes#custom-color-css-variables-1
-:root {
-  --color-background: ghostwhite !important; // 単調さを避けるため白からずらす
-  //--color-background-code: #ccc !important; // 元の宣言がいい感じなので変更する必要性を感じなかった
-  --color-background-paginate: rgba(128, 128, 128, 0.05) !important;
-  --color-foreground: #345 !important;
-  --color-highlight: #99c !important;
-  --color-highlight-hover: #aaf !important;
-  --color-highlight-heading: #99c !important;
-  --color-header: #bbb !important;
-  --color-header-shadow: transparent !important;
+// 以下を参考に記述
+// https://github.com/marp-team/marp-core/blob/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes/uncover.scss#L12-L22
+@mixin color-scheme($bg, $text, $highlight) {
+  --color-background: #{$bg};
+  --color-background-code: #{mix($bg, $text, 95%)};
+  --color-background-paginate: #{rgba($text, 0.05)};
+  --color-foreground: #{$text};
+  --color-highlight: #{$highlight};
+  --color-highlight-hover: #{mix($text, $highlight, 25%)};
+  --color-highlight-heading: #{mix(#fff, $highlight, 20%)};
+  --color-header: #{rgba($text, 0.4)};
+  --color-header-shadow: #{rgba($bg, 0.8)};
+}
+
+section {
+  @include color-scheme(#202228, #fff, #60d0f0);
 }

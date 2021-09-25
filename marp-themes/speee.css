@@ -1,14 +1,15 @@
 /* @theme speee */
-@import-theme "uncover";
-:root {
-  --color-background: ghostwhite !important;
-  --color-background-paginate: rgba(128, 128, 128, 0.05) !important;
-  --color-foreground: #345 !important;
-  --color-highlight: #99c !important;
-  --color-highlight-hover: #aaf !important;
-  --color-highlight-heading: #99c !important;
-  --color-header: #bbb !important;
-  --color-header-shadow: transparent !important;
+@import-theme "gaia";
+section {
+  --color-background: #202228;
+  --color-background-code: #2b2d33;
+  --color-background-paginate: rgba(255, 255, 255, 0.05);
+  --color-foreground: #fff;
+  --color-highlight: #60d0f0;
+  --color-highlight-hover: #88dcf4;
+  --color-highlight-heading: #80d9f3;
+  --color-header: rgba(255, 255, 255, 0.4);
+  --color-header-shadow: rgba(32, 34, 40, 0.8);
 }
 
 /*# sourceMappingURL=speee.css.map */
