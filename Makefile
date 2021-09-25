@@ -20,5 +20,8 @@ $(DST_PATH): $(CSS_PATH) $(SRC_PATH)
 $(CSS_PATH): $(SCSS_PATH)
 	sass $(SCSS_PATH) $(CSS_PATH)
 
+csswatch:
+	sass --watch $(SCSS_PATH) $(CSS_PATH)
+
 clean:
 	rm -f $(CSS_PATH) $(DST_PATH)
