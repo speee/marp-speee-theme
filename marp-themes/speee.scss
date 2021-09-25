@@ -1,20 +1,15 @@
 /* @theme speee */
 
-@import-theme "default";
+@import-theme "uncover";
 
-section {
-  background: radial-gradient(#f2b9a1, #ea6264);
-}
-
-section.title {
-  color: white;
-  background: radial-gradient(#003981, #ea6264);
-
-  H1 {
-    color: white;
-  }
-
-  H2 {
-    color: white;
-  }
+:root {
+  --color-background: #ddd !important;
+  --color-background-code: #ccc !important;
+  --color-background-paginate: rgba(128, 128, 128, 0.05) !important;
+  --color-foreground: #345 !important;
+  --color-highlight: #99c !important;
+  --color-highlight-hover: #aaf !important;
+  --color-highlight-heading: #99c !important;
+  --color-header: #bbb !important;
+  --color-header-shadow: transparent !important;
 }
