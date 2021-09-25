@@ -185,10 +185,11 @@ footer {
 section:not(.lead):before {
   position: absolute;
   top: 0px;
-  width: calc(30%);
-  height: calc(2%);
+  left: 0px;
+  width: calc(100%);
+  height: calc(3%);
   content: "";
-  background: linear-gradient(90deg, $color-dark, $color-lighter-dark);
+  background: linear-gradient(90deg, #080058, #008bcd);
 }
 
 section {
@@ -272,7 +273,7 @@ section {
 
   &.lead {
     @include color-scheme($color-dark, $color-light, $color-inverted-highlight);
-    background: linear-gradient(90deg, $color-dark, $color-lighter-dark);
+    background: linear-gradient(115deg, #080058, #008bcd);
 
     display: flex;
     flex-direction: column;
