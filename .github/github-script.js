@@ -3,8 +3,12 @@ module.exports = async ({ github, context }) => {
     owner: context.repo.owner,
     repo: context.repo.repo,
     commit_sha: context.payload.pull_request.head.sha,
-    body: `👋 Thanks for reporting!
-<image src="https://github.com/speee/marp-speee-theme/raw/1ed497697d73bb5b56820ac07a55272096a3d7c9/example/example.001.png" />
+    body: `
+<details><summary>スライドのレンダリング結果</summary>
+<image src="https://github.com/${context.repo.owner}/${context.repo.repo}/raw/${context.sha}/example/example.001.png" />
+</details>
+<image src="https://github.com/${context.repo.owner}/${context.repo.repo}/raw/${context.sha}/example/example.002.png" />
+</details>
     `,
   });
 };
