@@ -1,8 +1,6 @@
 /* @theme speee */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap");
 @import-theme "default";
 section {
-  font-family: "Roboto", "Noto Sans JP", sans-serif;
   background: radial-gradient(#f2b9a1, #ea6264);
 }
 
