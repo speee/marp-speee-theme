@@ -17,6 +17,14 @@ $(DST_PATH): $(CSS_PATH) $(SRC_PATH)
 	  --theme-set $(CSS_PATH) \
 	  --images png
 
+marpwatch:
+	npx @marp-team/marp-cli@latest \
+	  $(SRC_PATH) \
+	  --watch \
+	  --output $(DST_BASE_PATH) \
+	  --theme-set $(CSS_PATH) \
+	  --images png
+
 $(CSS_PATH): $(SCSS_PATH)
 	sass $(SCSS_PATH) $(CSS_PATH)
 
