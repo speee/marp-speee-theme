@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /*!
- * Marp / Marpit Gaia theme.
+ * Marp / Marpit Speee theme.
+ * (based on gaia theme https://github.com/marp-team/marp-core/blob/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes/gaia.scss )
  *
  * @theme speee
- * @author Yuki Hattori
  *
  * @auto-scaling true
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
  */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/sunburst.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/tomorrow-night-blue.min.css");
 svg[data-marp-fitting=svg] {
   max-height: 580px;
 }
@@ -164,7 +164,6 @@ footer {
 
 section {
   background-color: var(--color-background);
-  background-image: linear-gradient(135deg, rgba(136, 136, 136, 0), rgba(136, 136, 136, 0.02) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05));
   color: var(--color-foreground);
   font-size: 35px;
   font-family: "Lato", "Avenir Next", "Avenir", "Trebuchet MS", "Segoe UI", sans-serif;
@@ -174,10 +173,10 @@ section {
   padding: 70px;
   width: 1280px;
   word-wrap: break-word;
-  --color-background: #fff8e1;
-  --color-background-stripe: rgba(69, 90, 100, 0.1);
-  --color-foreground: #455a64;
-  --color-dimmed: #6a7a7d;
+  --color-background: ghostwhite;
+  --color-background-stripe: rgba(0, 57, 129, 0.1);
+  --color-foreground: #003981;
+  --color-dimmed: #325f9a;
   --color-highlight: #0288d1;
 }
 section::after {
@@ -227,21 +226,12 @@ section > *:first-child,
 section > header:first-child + * {
   margin-top: 0;
 }
-section.invert {
-  --color-background: #455a64;
-  --color-background-stripe: rgba(255, 248, 225, 0.1);
-  --color-foreground: #fff8e1;
-  --color-dimmed: #dad8c8;
-  --color-highlight: #81d4fa;
-}
-section.gaia {
-  --color-background: #0288d1;
-  --color-background-stripe: rgba(255, 248, 225, 0.1);
-  --color-foreground: #fff8e1;
-  --color-dimmed: #cce2de;
-  --color-highlight: #81d4fa;
-}
 section.lead {
+  --color-background: #003981;
+  --color-background-stripe: rgba(248, 248, 255, 0.1);
+  --color-foreground: ghostwhite;
+  --color-dimmed: #c6d2e6;
+  --color-highlight: #81d4fa;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

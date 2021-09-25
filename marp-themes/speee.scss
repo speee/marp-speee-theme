@@ -1,22 +1,21 @@
 /*!
- * Marp / Marpit Gaia theme.
+ * Marp / Marpit Speee theme.
+ * (based on gaia theme https://github.com/marp-team/marp-core/blob/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes/gaia.scss )
  *
  * @theme speee
- * @author Yuki Hattori
  *
  * @auto-scaling true
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
  */
 
-$color-light: #fff8e1;
-$color-dark: #455a64;
-$color-primary: #0288d1;
-$color-secondary: #81d4fa;
+$color-light: ghostwhite;
+$color-dark: #003981;
+$color-normal-highlight: #0288d1;
+$color-inverted-highlight: #81d4fa;
 
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap");
-// @import "~highlight.js/styles/sunburst";
-@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/sunburst.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/tomorrow-night-blue.min.css"); // 強制的に背景が青になるので背景が青のテーマを選択
 
 @mixin color-scheme($bg, $text, $highlight) {
   --color-background: #{$bg};
@@ -185,13 +184,6 @@ footer {
 
 section {
   background-color: var(--color-background);
-  background-image: linear-gradient(
-    135deg,
-    rgba(#888, 0),
-    rgba(#888, 0.02) 50%,
-    rgba(#fff, 0) 50%,
-    rgba(#fff, 0.05)
-  );
   color: var(--color-foreground);
   font-size: 35px;
   font-family: "Lato", "Avenir Next", "Avenir", "Trebuchet MS", "Segoe UI",
@@ -203,7 +195,7 @@ section {
   width: 1280px;
   word-wrap: break-word;
 
-  @include color-scheme($color-light, $color-dark, $color-primary);
+  @include color-scheme($color-light, $color-dark, $color-normal-highlight);
 
   &::after {
     right: 0;
@@ -268,15 +260,9 @@ section {
     margin-top: 0;
   }
 
-  &.invert {
-    @include color-scheme($color-dark, $color-light, $color-secondary);
-  }
-
-  &.gaia {
-    @include color-scheme($color-primary, $color-light, $color-secondary);
-  }
-
   &.lead {
+    @include color-scheme($color-dark, $color-light, $color-inverted-highlight);
+
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
