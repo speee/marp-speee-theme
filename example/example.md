@@ -3,7 +3,6 @@
 marp: true
 paginate: true
 theme: speee
-header: "Header content"
 footer: "Footer content"
 ---
 

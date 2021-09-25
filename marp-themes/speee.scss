@@ -182,14 +182,13 @@ footer {
   bottom: 0;
 }
 
-section:before {
+section:not(.lead):before {
   position: absolute;
   top: 0px;
-  left: calc(10%);
   width: calc(30%);
-  height: calc(3%);
+  height: calc(2%);
   content: "";
-  background: blue;
+  background: linear-gradient(90deg, $color-dark, $color-lighter-dark);
 }
 
 section {

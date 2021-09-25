@@ -161,14 +161,13 @@ footer {
   bottom: 0;
 }
 
-section:before {
+section:not(.lead):before {
   position: absolute;
   top: 0px;
-  left: 10%;
   width: 30%;
-  height: 3%;
+  height: 2%;
   content: "";
-  background: blue;
+  background: linear-gradient(90deg, #003981, #005ea5);
 }
 
 section {
