@@ -4,7 +4,6 @@
  * (based on gaia theme https://github.com/marp-team/marp-core/blob/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes/gaia.scss )
  *
  * @theme speee
- *
  * @auto-scaling true
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
@@ -162,7 +161,18 @@ footer {
   bottom: 0;
 }
 
+section:before {
+  position: absolute;
+  top: 0px;
+  left: 10%;
+  width: 30%;
+  height: 3%;
+  content: "";
+  background: blue;
+}
+
 section {
+  border-radius: 20px;
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: 35px;
@@ -173,10 +183,10 @@ section {
   padding: 70px;
   width: 1280px;
   word-wrap: break-word;
-  --color-background: ghostwhite;
+  --color-background: white;
   --color-background-stripe: rgba(0, 57, 129, 0.1);
   --color-foreground: #003981;
-  --color-dimmed: #325f9a;
+  --color-dimmed: #33619a;
   --color-highlight: #0288d1;
 }
 section::after {
@@ -228,9 +238,9 @@ section > header:first-child + * {
 }
 section.lead {
   --color-background: #003981;
-  --color-background-stripe: rgba(248, 248, 255, 0.1);
-  --color-foreground: ghostwhite;
-  --color-dimmed: #c6d2e6;
+  --color-background-stripe: rgba(255, 255, 255, 0.1);
+  --color-foreground: white;
+  --color-dimmed: #ccd7e6;
   --color-highlight: #81d4fa;
   background: linear-gradient(90deg, #003981, #005ea5);
   display: flex;

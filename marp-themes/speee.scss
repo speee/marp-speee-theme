@@ -3,13 +3,12 @@
  * (based on gaia theme https://github.com/marp-team/marp-core/blob/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes/gaia.scss )
  *
  * @theme speee
- *
  * @auto-scaling true
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
  */
 
-$color-light: ghostwhite;
+$color-light: white; // 病院的な白になるのでgghostwhiteのようにずらすか暖色系の白にしたほうが良さそう
 $color-dark: #003981; // 濃い方のコーポレートカラー
 $color-lighter-dark: #005ea5; // 薄い方のコーポレートカラー
 $color-normal-highlight: #0288d1;
@@ -183,7 +182,18 @@ footer {
   bottom: 0;
 }
 
+section:before {
+  position: absolute;
+  top: 0px;
+  left: calc(10%);
+  width: calc(30%);
+  height: calc(3%);
+  content: "";
+  background: blue;
+}
+
 section {
+  border-radius: 20px;
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: 35px;
