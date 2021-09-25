@@ -10,7 +10,8 @@
  */
 
 $color-light: ghostwhite;
-$color-dark: #003981;
+$color-dark: #003981; // 濃い方のコーポレートカラー
+$color-lighter-dark: #005ea5; // 薄い方のコーポレートカラー
 $color-normal-highlight: #0288d1;
 $color-inverted-highlight: #81d4fa;
 
@@ -262,6 +263,7 @@ section {
 
   &.lead {
     @include color-scheme($color-dark, $color-light, $color-inverted-highlight);
+    background: linear-gradient(90deg, $color-dark, $color-lighter-dark);
 
     display: flex;
     flex-direction: column;

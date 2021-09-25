@@ -232,6 +232,7 @@ section.lead {
   --color-foreground: ghostwhite;
   --color-dimmed: #c6d2e6;
   --color-highlight: #81d4fa;
+  background: linear-gradient(90deg, #003981, #005ea5);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
