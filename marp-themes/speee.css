@@ -1,8 +1,7 @@
 /* @theme speee */
 @import-theme "uncover";
 :root {
-  --color-background: #ddd !important;
-  --color-background-code: #ccc !important;
+  --color-background: ghostwhite !important;
   --color-background-paginate: rgba(128, 128, 128, 0.05) !important;
   --color-foreground: #345 !important;
   --color-highlight: #99c !important;
