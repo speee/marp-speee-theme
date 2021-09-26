@@ -2,7 +2,7 @@
 
 Speee 用の marp テーマ
 
-# 仕様例
+# 使用例
 
 ![](./example/example.001.png)
 ![](./example/example.002.png)
