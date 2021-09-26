@@ -1,23 +1,326 @@
-/* @theme speee */
+/*!
+ * Marp / Marpit Speee theme.
+ * (based on gaia theme https://github.com/marp-team/marp-core/blob/3ae79e06953bb4baf26ded4c9e1c5154169d70a4/themes/gaia.scss )
+ *
+ * @theme speee
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */
 
-@import-theme "default";
+$color-light: white; // 病院的な白になるのでgghostwhiteのようにずらすか暖色系の白にしたほうが良さそう
+$color-dark: #003981; // 濃い方のコーポレートカラー
+$color-lighter-dark: #005ea5; // 薄い方のコーポレートカラー
+$color-normal-highlight: #0288d1;
+$color-inverted-highlight: #81d4fa;
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Roboto+Mono&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/tomorrow-night-blue.min.css"); // 強制的に背景が青になるので背景が青のテーマを選択
 
-section {
-  font-family: "Roboto", "Noto Sans JP", sans-serif;
-  background: radial-gradient(#f2b9a1, #ea6264);
+@mixin color-scheme($bg, $text, $highlight) {
+  --color-background: #{$bg};
+  --color-background-stripe: #{rgba($text, 0.1)};
+  --color-foreground: #{$text};
+  --color-dimmed: #{mix($text, $bg, 80%)};
+  --color-highlight: #{$highlight};
 }
 
-section.title {
-  color: white;
-  background: radial-gradient(#003981, #ea6264);
+svg[data-marp-fitting="svg"] {
+  max-height: 580px; // Slide height - padding * 2
+}
 
-  H1 {
-    color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0 0 0;
+
+  strong {
+    font-weight: inherit;
+  }
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+p,
+blockquote {
+  margin: 1em 0 0 0;
+}
+
+ul,
+ol {
+  > li {
+    margin: 0.3em 0 0 0;
+
+    > p {
+      margin: 0.6em 0 0 0;
+    }
+  }
+}
+
+code {
+  display: inline-block;
+  font-family: "Roboto Mono", "Noto Sans JP", monospace; // Noto sans mono cjk jpがgoogle fontでないので妥協して等幅でないフォントを許容している
+  font-size: 0.8em;
+  letter-spacing: 0;
+  margin: -0.1em 0.15em;
+  padding: 0.1em 0.2em;
+  vertical-align: baseline;
+}
+
+pre {
+  display: block;
+  margin: 1em 0 0 0;
+  min-height: 1em;
+  overflow: visible;
+
+  code {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 100%;
+    padding: 0.5em;
+    font-size: 0.7em;
+
+    svg[data-marp-fitting="svg"] {
+      max-height: calc(580px - 1em);
+    }
+  }
+}
+
+blockquote {
+  margin: 1em 0 0 0;
+  padding: 0 1em;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "“";
+    display: block;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    position: absolute;
   }
 
-  H2 {
-    color: white;
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+mark {
+  background: transparent;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1em 0 0 0;
+
+  th,
+  td {
+    padding: 0.2em 0.4em;
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+header,
+footer,
+section::after {
+  box-sizing: border-box;
+  font-size: 66%;
+  height: 70px;
+  line-height: 50px;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: absolute;
+}
+
+header {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+section:not(.lead):before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(100%);
+  height: calc(3%);
+  content: "";
+  background: linear-gradient(90deg, #080058, #008bcd);
+}
+
+section {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 35px;
+  font-family: "Lato", "Noto Sans JP", sans-serif;
+  height: 720px;
+  line-height: 1.35;
+  letter-spacing: 1.25px;
+  padding: 70px;
+  width: 1280px;
+  word-wrap: break-word;
+
+  @include color-scheme($color-light, $color-dark, $color-normal-highlight);
+
+  &::after {
+    right: 0;
+    bottom: 0;
+    font-size: 80%;
+  }
+
+  a,
+  mark {
+    color: var(--color-highlight);
+  }
+
+  code {
+    background: var(--color-dimmed);
+    color: var(--color-background);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    strong {
+      color: var(--color-highlight);
+    }
+  }
+
+  pre > code {
+    background: var(--color-foreground);
+  }
+
+  header,
+  footer,
+  section::after,
+  blockquote::before,
+  blockquote::after {
+    color: var(--color-dimmed);
+  }
+
+  table {
+    th,
+    td {
+      border-color: var(--color-foreground);
+    }
+
+    thead th {
+      background: var(--color-foreground);
+      color: var(--color-background);
+    }
+
+    tbody > tr:nth-child(odd) {
+      td,
+      th {
+        background: var(--color-background-stripe, transparent);
+      }
+    }
+  }
+
+  > *:first-child,
+  > header:first-child + * {
+    margin-top: 0;
+  }
+
+  &.lead {
+    @include color-scheme($color-dark, $color-light, $color-inverted-highlight);
+    background: linear-gradient(115deg, #080058, #008bcd);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+
+      svg[data-marp-fitting="svg"] {
+        --preserve-aspect-ratio: xMidYMid meet;
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    blockquote {
+      > h1,
+      > h2,
+      > h3,
+      > h4,
+      > h5,
+      > h6,
+      > p {
+        text-align: left;
+      }
+
+      svg[data-marp-fitting="svg"]:not([data-marp-fitting-math]) {
+        --preserve-aspect-ratio: xMinYMin meet;
+      }
+    }
+
+    ul,
+    ol {
+      > li > p {
+        text-align: left;
+      }
+    }
+
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

@@ -50,6 +50,20 @@ jobs:
             identify -format "%[mean]" -)"
           (( $(echo "0.001 > $result" |bc -l) ))
 
+          result="$(composite -compose difference \
+            example/example.003.png \
+            example-backup/example.003.png \
+            - | \
+            identify -format "%[mean]" -)"
+          (( $(echo "0.001 > $result" |bc -l) ))
+
+          result="$(composite -compose difference \
+            example/example.004.png \
+            example-backup/example.004.png \
+            - | \
+            identify -format "%[mean]" -)"
+          (( $(echo "0.001 > $result" |bc -l) ))
+
       - name: 検証しやすいようにビルド結果をartifactへ保存
         uses: actions/upload-artifact@v2
         if: ${{ always() }}
