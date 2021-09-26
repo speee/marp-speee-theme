@@ -172,7 +172,6 @@ section:not(.lead):before {
 }
 
 section {
-  border-radius: 20px;
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: 35px;
