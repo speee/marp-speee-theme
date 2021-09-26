@@ -14,7 +14,7 @@ $color-lighter-dark: #005ea5; // 薄い方のコーポレートカラー
 $color-normal-highlight: #0288d1;
 $color-inverted-highlight: #81d4fa;
 
-@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Roboto+Mono&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/tomorrow-night-blue.min.css"); // 強制的に背景が青になるので背景が青のテーマを選択
 
 @mixin color-scheme($bg, $text, $highlight) {
@@ -196,8 +196,7 @@ section {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: 35px;
-  font-family: "Lato", "Avenir Next", "Avenir", "Trebuchet MS", "Segoe UI",
-    sans-serif;
+  font-family: "Lato", "Noto Sans JP", sans-serif;
   height: 720px;
   line-height: 1.35;
   letter-spacing: 1.25px;
