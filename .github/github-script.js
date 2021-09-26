@@ -10,6 +10,8 @@ module.exports = async ({ github, context }) => {
 
 <img src="https://github.com/${context.repo.owner}/${context.repo.repo}/raw/${context.sha}/example/example.001.png" height="360px" />
 <img src="https://github.com/${context.repo.owner}/${context.repo.repo}/raw/${context.sha}/example/example.002.png" height="360px" />
+<img src="https://github.com/${context.repo.owner}/${context.repo.repo}/raw/${context.sha}/example/example.003.png" height="360px" />
+<img src="https://github.com/${context.repo.owner}/${context.repo.repo}/raw/${context.sha}/example/example.004.png" height="360px" />
 
 </details>
     `,
