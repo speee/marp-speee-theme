@@ -84,7 +84,7 @@ ol {
 
 code {
   display: inline-block;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", "Noto Sans JP", monospace; // Noto sans mono cjk jpがgoogle fontでないので妥協して等幅でないフォントを許容している
   font-size: 0.8em;
   letter-spacing: 0;
   margin: -0.1em 0.15em;

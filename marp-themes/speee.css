@@ -71,7 +71,7 @@ ol > li > p {
 
 code {
   display: inline-block;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", "Noto Sans JP", monospace;
   font-size: 0.8em;
   letter-spacing: 0;
   margin: -0.1em 0.15em;
