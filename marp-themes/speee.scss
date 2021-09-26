@@ -193,7 +193,7 @@ section:not(.lead):before {
 }
 
 section {
-  border-radius: 20px;
+  border-radius: 20px; // 画像上だととても格好いいが、スライド化すると勝手に白埋めされるので一気にダサくなる。やめたほうがよさそう
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: 35px;
