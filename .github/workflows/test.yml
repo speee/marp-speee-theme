@@ -31,6 +31,9 @@ jobs:
       - name: コミットに含まれるスライド画像をバックアップ
         run: mkdir example-backup && mv example/example.0* example-backup
 
+      - name: 必要なフォントをインストール
+        run: sudo apt install fonts-noto-cjk
+
       - name: 一度すべて削除して再ビルド
         run: make clean all
 
