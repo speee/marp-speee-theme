@@ -46,7 +46,7 @@ TBW
 
 だからかなりコントリビュートしやすくなっているはず。なるべくそこは維持していきたい。
 
-# 関連ドキュメント
+# 関連ドキュメント(社内向け)
 
 - [Speee*VI*レギュレーション.pdf (コーポレートカラー仕様)](https://drive.google.com/file/d/1m5VzUtWX6JbortXmylHLABrN_RxamyXx/view?usp=sharing)
 - [【テンプレ配布】パワポ職人が本気で G スライドのマスタを作ったから見てくれ \| speee Kibela](https://speee.kibe.la/@masayuki_nagayama/22064)
