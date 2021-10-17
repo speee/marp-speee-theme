@@ -4,10 +4,9 @@ Speee 用の marp テーマ
 
 # 使用例
 
-![](./example/example.001.png)
-![](./example/example.002.png)
-![](./example/example.003.png)
-![](./example/example.004.png)
+![](./example/example.001.png) | ![](./example/example.002.png)
+:-------------------------:|:-------------------------:
+![](./example/example.003.png) | ![](./example/example.004.png)
 
 # 使い方
 
