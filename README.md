@@ -11,7 +11,14 @@ Speee 用の marp テーマ
 
 # 使い方
 
+## (主に Speee 社員が)株式会社 Speee の企業活動の一部として資料を作成する場合
+
 TBW
+
+## その他の場合
+
+株式会社 Speee の企業ロゴを削除してください。
+その他については上記と同様です。
 
 # 開発方法
 
@@ -44,3 +51,9 @@ TBW
 
 - [Speee*VI*レギュレーション.pdf (コーポレートカラー仕様)](https://drive.google.com/file/d/1m5VzUtWX6JbortXmylHLABrN_RxamyXx/view?usp=sharing)
 - [【テンプレ配布】パワポ職人が本気で G スライドのマスタを作ったから見てくれ \| speee Kibela](https://speee.kibe.la/@masayuki_nagayama/22064)
+
+# ライセンスについて
+
+本リポジトリに含まれるリソースは Speee 企業ロゴを除いて[ライセンス](./LICENSE)に属します。
+ただし Speee 企業ロゴのみは株式会社 Speee が独占的な権利を保持するため、
+Speee 社員が株式会社 Speee の企業活動の一部として資料を作成する場合以外でロゴを使用したい場合は弊社までお問い合わせください。
