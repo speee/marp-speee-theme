@@ -1,4 +1,4 @@
-# marp-speee-theme
+# marp-speee-theme [![exampleの出力結果画像が最新かどうかのテスト](https://github.com/speee/marp-speee-theme/actions/workflows/test.yml/badge.svg)](https://github.com/speee/marp-speee-theme/actions/workflows/test.yml)
 
 Speee 用の marp テーマ
 
