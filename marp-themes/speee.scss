@@ -193,6 +193,10 @@ section:not(.lead):before {
 }
 
 section {
+  background-image: url("https://user-images.githubusercontent.com/826646/137622194-dcc7a22c-ea80-4631-9baa-9b751db89071.png");
+  background-repeat: no-repeat;
+  background-position: 3% 97%;
+  background-size: 9% auto, 100% 100%;
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: 35px;
@@ -271,7 +275,8 @@ section {
 
   &.lead {
     @include color-scheme($color-dark, $color-light, $color-inverted-highlight);
-    background: linear-gradient(115deg, #080058, #008bcd);
+    background-image: url("https://user-images.githubusercontent.com/826646/137622214-d77d493d-136b-4456-819b-8d11094ea4a2.png"),
+      linear-gradient(115deg, #080058, #008bcd);
 
     display: flex;
     flex-direction: column;
