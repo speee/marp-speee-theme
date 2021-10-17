@@ -15,15 +15,14 @@ Speee 用の marp テーマ
 Speee 社員以外または株式会社 Speee の企業活動ではない目的でこのテーマを利用する場合は描画結果に株式会社 Speee の企業ロゴが表示されないよう画像ファイルを削除してください。
 詳細は[ライセンスについて](#ライセンスについて)を参照
 
-### A. VS Code
+## VS Codeの場合
 
 1. [【VS Code \+ Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る \- Qiita](https://qiita.com/tomo_makes/items/aafae4021986553ae1d8#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92%E4%BD%BF%E3%81%86)を参考にVS Codeの設定へ `https://raw.githubusercontent.com/speee/marp-speee-theme/main/marp-themes/speee.css` を設定
 2. [example.md](example/example.md) をコピーまたは参考にしてmarkdownファイルを作成する
 
-### B. Marp CLI
+## Marp CLIの場合
 
 コマンド実行時 `--theme-set https://raw.githubusercontent.com/speee/marp-speee-theme/main/marp-themes/speee.css` オプションを指定する。
-
 
 # 開発方法
 
