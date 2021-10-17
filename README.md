@@ -10,7 +10,10 @@ Speee 用の marp テーマ
 
 # 使い方
 
-## 1. Speee 社員が株式会社 Speee の企業活動の一部としてこのテーマを利用する場合
+## 利用上の注意
+
+Speee 社員以外または株式会社 Speee の企業活動ではない目的でこのテーマを利用する場合は描画結果に株式会社 Speee の企業ロゴが表示されないよう画像ファイルを削除してください。
+詳細は[ライセンスについて](#ライセンスについて)を参照
 
 ### A. VS Code
 
@@ -21,10 +24,6 @@ Speee 用の marp テーマ
 
 コマンド実行時 `--theme-set https://raw.githubusercontent.com/speee/marp-speee-theme/main/marp-themes/speee.css` オプションを指定する。
 
-## 2. Speee 社員以外または株式会社 Speee の企業活動ではない目的でこのテーマを利用する場合
-
-株式会社 Speee の企業ロゴを削除してください。
-その他については上記と同様です。
 
 # 開発方法
 
