@@ -34,7 +34,8 @@ Speee 社員以外または株式会社 Speee の企業活動ではない目的�
 
 1. vscode で marp 拡張をインストール
 1. `make csswatch` で scss が変更されたらすぐ反映されるようにする
-1. `example/example.md` を開き、vscode でプレビューしながらマークダウンファイルと SCSS を編集する
+1. `make marpwatch` で css や markdown が変更されたらすぐ反映されるようにする
+3. `example/example.md` を開き、vscode でプレビューしながらマークダウンファイルと SCSS を編集する
 
 ## 設計ノート
 
