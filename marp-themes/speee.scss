@@ -193,7 +193,7 @@ section:not(.lead):before {
 }
 
 section {
-  background-image: url("https://user-images.githubusercontent.com/826646/137622194-dcc7a22c-ea80-4631-9baa-9b751db89071.png");
+  background-image: url("https://github.com/speee/marp-speee-theme/raw/main/marp-themes/Speee_VI_yokogumi.png");
   background-repeat: no-repeat;
   background-position: 3% 97%;
   background-size: 9% auto, 100% 100%;
@@ -275,7 +275,7 @@ section {
 
   &.lead {
     @include color-scheme($color-dark, $color-light, $color-inverted-highlight);
-    background-image: url("https://user-images.githubusercontent.com/826646/137622214-d77d493d-136b-4456-819b-8d11094ea4a2.png"),
+    background-image: url("https://raw.githubusercontent.com/speee/marp-speee-theme/main/marp-themes/Speee_VI_yokogumi_white.png"),
       linear-gradient(115deg, #080058, #008bcd);
 
     display: flex;
