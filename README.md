@@ -22,7 +22,12 @@ Speee 社員以外または株式会社 Speee の企業活動ではない目的�
 
 ## Marp CLIの場合
 
-コマンド実行時 `--theme-set https://raw.githubusercontent.com/speee/marp-speee-theme/main/marp-themes/speee.css` オプションを指定する。
+ローカルにテーマファイルをダウンロードして使用する。
+
+```bash
+curl -o speee.css https://raw.githubusercontent.com/speee/marp-speee-theme/main/marp-themes/speee.css
+marp example.md -o example.pptx --theme-set speee.css --allow-local-files
+```
 
 # 開発方法
 
