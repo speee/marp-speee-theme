@@ -33,6 +33,7 @@ marp example.md -o example.pptx --theme-set speee.css --allow-local-files
 
 ## 依存物
 
+1. npmとmakeをインストールする
 1. `make init` で必要なパッケージをインストールする
 
 ## 開発手順
