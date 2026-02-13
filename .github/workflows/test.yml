@@ -85,6 +85,7 @@ jobs:
       - name: 結果画像をコミットへ貼り付け
         uses: actions/github-script@v7
         if: github.event_name == 'pull_request'
+        continue-on-error: true
         with:
           script: |
             const script = require('./.github/github-script.js')
