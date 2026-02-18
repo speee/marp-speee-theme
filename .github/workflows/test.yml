@@ -23,10 +23,13 @@ jobs:
 
     steps:
       - name: リポジトリのチェックアウト
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: sassコマンドのインストール
         run: npm install -g sass
+
+      - name: ImageMagickのインストール
+        run: sudo apt-get install -y imagemagick
 
       - name: コミットに含まれるスライド画像をバックアップ
         run: mkdir example-backup && mv example/example.0* example-backup
@@ -64,8 +67,15 @@ jobs:
             identify -format "%[mean]" -)"
           (( $(echo "0.001 > $result" |bc -l) ))
 
+          result="$(composite -compose difference \
+            example/example.005.png \
+            example-backup/example.005.png \
+            - | \
+            identify -format "%[mean]" -)"
+          (( $(echo "0.001 > $result" |bc -l) ))
+
       - name: 検証しやすいようにビルド結果をartifactへ保存
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
           name: example
@@ -73,8 +83,9 @@ jobs:
           if-no-files-found: error
 
       - name: 結果画像をコミットへ貼り付け
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         if: github.event_name == 'pull_request'
+        continue-on-error: true
         with:
           script: |
             const script = require('./.github/github-script.js')
